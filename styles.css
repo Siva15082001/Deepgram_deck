@@ -1,0 +1,249 @@
+:root {
+  --bg: #0b1020;
+  --panel: #121a2d;
+  --panel-alt: #101827;
+  --text: #e6ecff;
+  --muted: #9fb0d9;
+  --accent: #18b6ff;
+  --accent-2: #2be3c6;
+  --danger: #ff7b7b;
+  --border: #26324f;
+  --shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle at 20% 0%, #16223f 0%, var(--bg) 45%);
+  color: var(--text);
+  line-height: 1.45;
+}
+
+.page-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  gap: 16px;
+}
+
+.section-card {
+  background: linear-gradient(180deg, var(--panel), var(--panel-alt));
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+h1, h2, h3 {
+  margin: 0 0 8px;
+  letter-spacing: 0.2px;
+}
+
+h1 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); }
+h2 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
+h3 { font-size: 1.05rem; }
+
+p { margin: 8px 0; }
+
+.eyebrow {
+  color: var(--accent-2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.78rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.hero-copy {
+  max-width: 88ch;
+}
+
+.disclaimer {
+  margin-top: 12px;
+  border-left: 3px solid var(--accent);
+  padding-left: 10px;
+  color: #c8d7ff;
+}
+
+.dual-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.tight-list {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+}
+
+.problem-card {
+  border-color: #4a3141;
+}
+
+.section-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.small-note {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.arch-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.arch-node {
+  color: var(--text);
+  background: #12203f;
+  border: 1px solid #2c4374;
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.arch-node:hover,
+.arch-node:focus-visible,
+.arch-node.is-active {
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 2px rgba(43, 227, 198, 0.2);
+  transform: translateY(-1px);
+}
+
+.arrow {
+  color: var(--muted);
+}
+
+.role-description {
+  margin-top: 12px;
+  background: #101c36;
+  border: 1px solid #203253;
+  border-radius: 8px;
+  padding: 10px;
+  color: #cae4ff;
+}
+
+.toggle-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.toggle-btn {
+  background: #0f2749;
+  color: var(--text);
+  border: 1px solid #2f5da0;
+  border-radius: 999px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+.toggle-btn[aria-pressed="true"] {
+  border-color: var(--accent-2);
+  background: #123835;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.phase-card {
+  border: 1px solid #2a3859;
+  background: #101a30;
+  border-radius: 12px;
+  padding: 14px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.phase-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.goal {
+  color: #d6e3ff;
+  font-size: 0.95rem;
+}
+
+.expand-note {
+  margin-top: 6px;
+  background: transparent;
+  border: 1px solid #3b4e74;
+  color: var(--text);
+  border-radius: 8px;
+  padding: 6px 9px;
+  cursor: pointer;
+}
+
+.phase-note {
+  display: none;
+  margin-top: 8px;
+  padding: 8px;
+  background: #102847;
+  border: 1px solid #2b4f7c;
+  border-radius: 8px;
+  color: #cce3ff;
+}
+
+.phase-card.open .phase-note {
+  display: block;
+}
+
+body.expanded .phase-card {
+  border-color: #3b8db7;
+}
+
+body.expanded .tight-list li {
+  opacity: 1;
+}
+
+body:not(.expanded) .phase-card .tight-list li:nth-child(n + 5) {
+  display: none;
+}
+
+.footer {
+  color: #d2ddfa;
+}
+
+.footer-title {
+  font-weight: 600;
+}
+
+a {
+  color: var(--accent-2);
+}
+
+@media (max-width: 960px) {
+  .timeline-grid,
+  .dual-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-shell {
+    padding: 14px;
+  }
+}
