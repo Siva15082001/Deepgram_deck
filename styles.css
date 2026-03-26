@@ -1,61 +1,32 @@
 :root {
-  --ink-0: #06090f;
-  --ink-1: #0d1420;
-  --ink-2: #121c2c;
-  --panel: rgba(10, 18, 31, 0.78);
-  --panel-strong: rgba(7, 15, 26, 0.94);
-  --line: rgba(74, 104, 147, 0.45);
-  --line-bright: rgba(83, 196, 255, 0.75);
-  --text-main: #f2f7ff;
-  --text-muted: #b2c2de;
-  --signal: #53c4ff;
-  --signal-soft: #7af4dc;
-  --warn: #ff8f8f;
-  --radius: 18px;
+  --bg: #0b1020;
+  --panel: #121a2d;
+  --panel-alt: #101827;
+  --text: #e6ecff;
+  --muted: #9fb0d9;
+  --accent: #18b6ff;
+  --accent-2: #2be3c6;
+  --danger: #ff7b7b;
+  --border: #26324f;
+  --shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  min-height: 100vh;
-  color: var(--text-main);
-  background:
-    radial-gradient(120% 90% at 90% -10%, rgba(83, 196, 255, 0.16), transparent 55%),
-    radial-gradient(80% 60% at 8% 12%, rgba(122, 244, 220, 0.11), transparent 52%),
-    linear-gradient(160deg, var(--ink-0) 0%, var(--ink-1) 52%, #080d16 100%);
-  font-family: 'IBM Plex Sans', 'Segoe UI', sans-serif;
-  line-height: 1.5;
-  position: relative;
-}
-
-.ambient-grid,
-.noise-layer {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.ambient-grid {
-  background-image:
-    linear-gradient(rgba(83, 196, 255, 0.065) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(83, 196, 255, 0.055) 1px, transparent 1px);
-  background-size: 58px 58px;
-  mask-image: radial-gradient(circle at 50% 30%, #000 35%, transparent 85%);
-}
-
-.noise-layer {
-  opacity: 0.07;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.4) 0.45px, transparent 0.8px);
-  background-size: 3px 3px;
+  font-family: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle at 20% 0%, #16223f 0%, var(--bg) 45%);
+  color: var(--text);
+  line-height: 1.45;
 }
 
 .page-shell {
-  position: relative;
-  z-index: 1;
-  width: min(1220px, calc(100% - 24px));
-  margin: 18px auto 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
   display: grid;
   gap: 16px;
 }
