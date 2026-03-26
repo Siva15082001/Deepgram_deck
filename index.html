@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enterprise AI Strategist – Deepgram for Restaurants</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class="noise-layer" aria-hidden="true"></div>
+    <div class="page-shell">
+      <header class="hero section-card" id="top">
+        <p class="eyebrow">Portfolio Concept • Public-Information Draft</p>
+        <h1>Enterprise AI Strategist – Deepgram for Restaurants</h1>
+        <p class="subtitle">A 30-60-90 deployment plan for voice-AI in QSR drive-thru / phone ordering</p>
+        <p class="hero-copy">
+          I am excited about Deepgram for Restaurants because it combines practical voice infrastructure with a
+          deployment mindset that can move from pilot to measurable field outcomes quickly. This page outlines a
+          speculative, publicly driven concept based on documented Deepgram capabilities and known QSR operating
+          realities, not internal systems or confidential customer data.
+        </p>
+        <p class="disclaimer">
+          This solution is built only from public information about Deepgram and QSR operations. The final
+          implementation would adapt to Deepgram’s internal architecture, customer integrations, and field
+          learnings.
+        </p>
+      </header>
+
+      <main>
+        <section class="dual-grid">
+          <article class="section-card">
+            <h2>Context: Deepgram’s restaurant stack</h2>
+            <ul class="tight-list">
+              <li><strong>Deepgram Speech-to-Text API</strong> transcribes live customer and crew speech in noisy channels.</li>
+              <li><strong>Deepgram Voice Agent API</strong> manages turn-by-turn conversation logic and tool calling.</li>
+              <li><strong>Deepgram Text-to-Speech API</strong> returns natural, low-latency responses to the customer.</li>
+              <li>Restaurant deployment layer includes guardrails, business integrations, and operational analytics.</li>
+              <li>Target domains: drive-thru lanes and phone ordering with shared menu and store context.</li>
+            </ul>
+          </article>
+
+          <article class="section-card problem-card">
+            <h2>Problem: deployment friction in live QSR environments</h2>
+            <ul class="tight-list">
+              <li>Drive-thru is high-noise, multi-mic, multi-speaker, while staff simultaneously manage headset, POS, and KDS.</li>
+              <li>Abandonment rises quickly if ordering feels slow, repetitive, or inaccurate.</li>
+              <li>Initial deployments must feel like magic in 4-6 weeks, not 6 months.</li>
+              <li>The strategist sits at the nexus of corporate stakeholders, store crews, and product/engineering.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="section-card" id="architecture">
+          <div class="section-header-row">
+            <h2>Solution architecture (speculative public model)</h2>
+            <p class="small-note">Hover any API block to inspect its role in the workflow.</p>
+          </div>
+          <div class="arch-flow" role="list" aria-label="Voice AI architecture flow">
+            <button class="arch-node is-active" data-role="capture" role="listitem">Audio Capture</button>
+            <span class="arrow">→</span>
+            <button class="arch-node" data-role="stt" role="listitem">Deepgram Speech-to-Text API</button>
+            <span class="arrow">→</span>
+            <button class="arch-node" data-role="agent" role="listitem">Deepgram Voice Agent API</button>
+            <span class="arrow">→</span>
+            <button class="arch-node" data-role="tts" role="listitem">Deepgram Text-to-Speech API</button>
+            <span class="arrow">→</span>
+            <button class="arch-node" data-role="pos" role="listitem">POS / KDS</button>
+          </div>
+          <p class="role-description" id="roleDescription">
+            Captures lane/phone audio, tags channel metadata, and forwards clean streams for transcription.
+          </p>
+          <ul class="tight-list architecture-bullets">
+            <li>Noise-aware transcription patterns improve performance in overlapping speaker conditions.</li>
+            <li>Agent prompts and menu grammar prioritize modifier handling and item disambiguation.</li>
+            <li>Latency budgets are tuned across ASR, agent reasoning, and TTS to keep dialogue natural.</li>
+            <li>Structured outputs map directly into POS/KDS order objects for operational continuity.</li>
+          </ul>
+          <p class="disclaimer small">
+            This is a speculative architecture based on public Deepgram documentation. The final implementation would
+            adapt to Deepgram’s internal architecture and customer constraints.
+          </p>
+        </section>
+
+        <section class="section-card">
+          <h2>What’s different about this approach</h2>
+          <ul class="tight-list">
+            <li>Days 1-3 run as a field-driven discovery sprint with same-day micro-experiments on Deepgram APIs.</li>
+            <li>FDPM is reframed as a closed-loop, AI-assisted workflow with instrumentation from day one.</li>
+            <li>Scope starts narrow: one lane, one daypart, one constrained order complexity profile.</li>
+            <li>Expansion happens in two-week waves after threshold metrics stabilize.</li>
+            <li>Existing human handoffs are mirrored first, then gradually compressed through automation.</li>
+            <li>Daily insight reviews convert crew feedback into product requirements and backlog items.</li>
+          </ul>
+        </section>
+
+        <section class="section-card" id="plan">
+          <div class="section-header-row">
+            <h2>30-60-90 command dashboard</h2>
+            <div class="toggle-wrap" role="group" aria-label="Plan depth">
+              <span>Narrow</span>
+              <button id="viewToggle" class="toggle-btn" aria-pressed="false">Expanded</button>
+            </div>
+          </div>
+
+          <div class="timeline-grid">
+            <article class="phase-card" data-phase="0-30">
+              <h3>0-30 days</h3>
+              <p class="goal"><strong>Goal:</strong> Prove a magical, low-risk drive-thru experience in one lane.</p>
+              <ul class="tight-list">
+                <li><strong>Deeply understand the customer’s business:</strong> shadow lane operations and map failure moments using <strong>Speech-to-Text API</strong> transcripts.</li>
+                <li><strong>Serve as primary POC:</strong> run daily standups across store ops, corporate IT, and Deepgram deployment contacts.</li>
+                <li><strong>Design the narrow slice:</strong> configure <strong>Voice Agent API</strong> for top menu intents and low-complexity modifiers.</li>
+                <li><strong>Mirror handoffs:</strong> keep human validation checkpoints before POS commit for controlled rollout.</li>
+                <li><strong>Monitor performance:</strong> baseline latency, completion rate, repeat rate, and correction frequency.</li>
+                <li><strong>Translate field insights into requirements:</strong> issue sprint-ready specs for acoustic edge cases and menu language variants.</li>
+              </ul>
+              <button class="expand-note" aria-expanded="false">View execution note</button>
+              <p class="phase-note">Execution note: success criteria are visible within week two if team alignment, menu data, and headset audio quality are stable.</p>
+            </article>
+
+            <article class="phase-card" data-phase="31-60">
+              <h3>31-60 days</h3>
+              <p class="goal"><strong>Goal:</strong> Scale reliability across dayparts and strengthen operational trust.</p>
+              <ul class="tight-list">
+                <li><strong>Deeply understand variability:</strong> compare lunch vs dinner acoustic and order-mix patterns via analytics dashboards.</li>
+                <li><strong>Serve as primary POC:</strong> align franchise operators and central stakeholders on rollout gates.</li>
+                <li><strong>Tune dialogue quality:</strong> adjust <strong>Voice Agent API</strong> prompts for upsell boundaries and clarification strategy.</li>
+                <li><strong>Improve voice UX:</strong> calibrate <strong>Text-to-Speech API</strong> delivery for intelligibility under lane noise.</li>
+                <li><strong>Monitor performance:</strong> enforce weekly KPI reviews and incident trend audits.</li>
+                <li><strong>Translate insights into product requirements:</strong> convert recurring exceptions into integration and model enhancement requests.</li>
+              </ul>
+              <button class="expand-note" aria-expanded="false">View execution note</button>
+              <p class="phase-note">Execution note: this period should reduce intervention rates and raise crew confidence before broader expansion.</p>
+            </article>
+
+            <article class="phase-card" data-phase="61-90">
+              <h3>61-90 days</h3>
+              <p class="goal"><strong>Goal:</strong> Operationalize repeatable deployment playbooks for multi-store growth.</p>
+              <ul class="tight-list">
+                <li><strong>Deeply understand enterprise constraints:</strong> fold corporate policy, training, and IT standards into deployment templates.</li>
+                <li><strong>Serve as primary POC:</strong> hand off mature communication cadences to customer success and account teams.</li>
+                <li><strong>Expand scope safely:</strong> add second lane or phone channel with shared <strong>Speech-to-Text API</strong> and agent patterns.</li>
+                <li><strong>Monitor performance:</strong> publish executive scorecards on conversion, service time, and order accuracy.</li>
+                <li><strong>Translate field insights into product requirements:</strong> submit prioritized roadmap inputs tied to quantified business outcomes.</li>
+                <li><strong>Institutionalize governance:</strong> define fallback procedures, alerting thresholds, and escalation ownership.</li>
+              </ul>
+              <button class="expand-note" aria-expanded="false">View execution note</button>
+              <p class="phase-note">Execution note: by day 90, leadership should see a repeatable motion, not a one-off pilot.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="section-card footer">
+        <p class="footer-title">Siva Kumar – Enterprise AI Strategist, Deepgram for Restaurants (conceptual)</p>
+        <p>
+          This plan is built purely from public Deepgram documentation and QSR operations knowledge. I’m eager to
+          adapt and refine it once I’m inside Deepgram and working directly with Product, Engineering, and Customer
+          Success teams.
+        </p>
+        <a href="#" aria-label="View original job post">View original job post</a>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
